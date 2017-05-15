@@ -72,6 +72,13 @@ document.querySelector("#pig-latin button").addEventListener('click', function()
     }
 })
 
-// document.querySelector("#cycle-image button").addEventListener('click', function() {
-//     // TASK #8
-// })
+document.querySelector("#cycle-image button").addEventListener('click', function() {
+    // TASK #8
+    var imgNode = document.querySelector('#city-img')                         // create image node
+    var lastNum = parseInt(imgNode.src.slice(-1))                             // create last number node
+    lastNum += 1                                                              // increase last number
+    if (lastNum > 9) {                                                        // cycle through pics
+      lastNum = 1                                                             // cycle through pics
+    }
+    imgNode.src = imgNode.src.slice(0, -1) + lastNum                          // return url with new image
+})
